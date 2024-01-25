@@ -11,7 +11,7 @@ public class RobotMoving {
         System.out.println("| - contoh input perintah: AARAAAAAAAA                                        |");
         System.out.println("==============================================================================\n\n");
 
-        String initiatePosition = Helper.inputString("Tentukan posisi awal robot");
+        String initiatePosition = Helper.inputString(">Tentukan posisi awal robot");
         String[] arrPosition = initiatePosition.split(",");
 
         Direction direction = Direction.EAST;
@@ -32,7 +32,7 @@ public class RobotMoving {
         Robot robot = new Robot(direction, x, y);
 
 
-        String command = Helper.inputString("Input perintah");
+        String command = Helper.inputString(">Input perintah");
 
         for (char c : command.toCharArray()) {
             if (c == 'A') {
@@ -42,11 +42,7 @@ public class RobotMoving {
             } else if (c == 'R') {
                 robot.turnRight();
             }
-
-            System.out.println(
-                    c + "-> (" + robot.getX() + "," + robot.getY() + ")"
-            );
-            System.out.printf("");
+            System.out.printf(">%c -> ( %d, %d )\n", c, robot.getX(), robot.getY());
         }
     }
 }
