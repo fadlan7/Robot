@@ -1,6 +1,16 @@
 public class RobotMoving {
     public void RobotMoving() {
 
+        System.out.println("==================================== ROBOT ====================================");
+        System.out.println("| - Posisi awal robot hanya input n(north),e(east),w(west),s(south)           |");
+        System.out.println("| - Contoh input posisi awal: n,2,3                                           |");
+        System.out.println("| - Input perintah:                                                           |");
+        System.out.println("| A -> Mewakili gerakan 1 langkah maju searah dengan mata angin yang dihadapi |");
+        System.out.println("| L -> Mewakili gerakan hadap kiri                                            |");
+        System.out.println("| R -> Mewakili gerakan hadap kanan                                           |");
+        System.out.println("| - contoh input perintah: AARAAAAAAAA                                        |");
+        System.out.println("==============================================================================\n\n");
+
         String initiatePosition = Helper.inputString("Tentukan posisi awal robot");
         String[] arrPosition = initiatePosition.split(",");
 
@@ -34,7 +44,7 @@ public class RobotMoving {
             }
 
             System.out.println(
-                   c + "-> (" + robot.getX() + "," + robot.getY() + ")"
+                    c + "-> (" + robot.getX() + "," + robot.getY() + ")"
             );
             System.out.printf("");
         }
