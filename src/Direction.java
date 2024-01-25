@@ -1,5 +1,3 @@
-package com.enigma.java_oop.constant;
-
 public enum Direction {
     NORTH, //0
     EAST, //1

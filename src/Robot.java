@@ -1,27 +1,61 @@
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 public class Robot {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        char[] commandChar = new char[0];
 
-        String initiatePosition = Helper.inputString("Tentukan posisi awal robot");
-        String[] arrPosition = initiatePosition.split(",");
+    private Direction direction;
+    private Integer x;
+    private Integer y;
 
-        String command = Helper.inputString("Input perintah");
-
-        for (int i = 0; i < command.length(); i++) {
-            commandChar = command.toCharArray();
-        }
-
-        System.out.println(commandChar);
-
-        String direction = arrPosition[0];
-        int x = Integer.parseInt(arrPosition[1]);
-        int y = Integer.parseInt(arrPosition[2]);
+    public Integer getX() {
+        return x;
     }
 
+    public void setX(Integer x) {
+        this.x = x;
+    }
 
+    public Integer getY() {
+        return y;
+    }
+
+    public void setY(Integer y) {
+        this.y = y;
+    }
+
+    public Robot(Direction direction, Integer x, Integer y) {
+        this.direction = direction;
+        this.x = x;
+        this.y = y;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    public void turnRight() {
+        direction = direction.values()[(direction.ordinal() + 1 + direction.values().length) % direction.values().length];
+    }
+
+    public void turnLeft() {
+        direction = direction.values()[(direction.ordinal() - 1 + direction.values().length) % direction.values().length];
+    }
+
+    public void moveForward() {
+        switch (direction) {
+            case NORTH:
+                y++;
+                break;
+            case EAST:
+                x++;
+                break;
+            case SOUTH:
+                y--;
+                break;
+            case WEST:
+                x--;
+                break;
+        }
+    }
 }
