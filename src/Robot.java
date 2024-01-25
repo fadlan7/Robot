@@ -5,15 +5,12 @@ import java.util.Scanner;
 public class Robot {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String initiatePosition;
         char[] commandChar = new char[0];
 
-        System.out.print("Tentukan posisi awal robot: ");
-        initiatePosition = sc.nextLine();
+        String initiatePosition = Helper.inputString("Tentukan posisi awal robot");
         String[] arrPosition = initiatePosition.split(",");
 
-        System.out.print("Input perintah: ");
-        String command = sc.nextLine();
+        String command = Helper.inputString("Input perintah");
 
         for (int i = 0; i < command.length(); i++) {
             commandChar = command.toCharArray();
@@ -24,6 +21,7 @@ public class Robot {
         String direction = arrPosition[0];
         int x = Integer.parseInt(arrPosition[1]);
         int y = Integer.parseInt(arrPosition[2]);
-
     }
+
+
 }
